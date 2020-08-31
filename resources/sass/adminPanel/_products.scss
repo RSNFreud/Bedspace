@@ -1,0 +1,307 @@
+@use 'variables'as *;
+
+.productGrid {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: minmax(400px, 1000px);
+    align-items: flex-start;
+    justify-content: flex-start;
+    justify-items: flex-start;
+
+    .box {
+        width: 100%;
+    }
+}
+
+.newProductGrid {
+    padding: 30px;
+    display: grid;
+    justify-content: center;
+}
+
+.newCategoryGrid {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: minmax(300px, 600px);
+    justify-content: center;
+
+    .formData {
+        width: 100%;
+    }
+}
+
+.newProduct {
+    justify-self: flex-start;
+    box-shadow: $boxShadow;
+    margin-bottom: 15px;
+}
+
+.box {
+    background-color: #fff;
+    box-shadow: $boxShadow;
+    padding: 30px;
+}
+
+.searchBarTop {
+    position: relative;
+}
+
+.fa-search {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.button {
+    cursor: pointer;
+    background-color: $blue;
+    padding: 7px 20px;
+    color: white;
+
+    i {
+        font-size: 0.9em;
+    }
+}
+
+.productsList {
+    margin-top: 30px;
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 20px;
+}
+
+.productItemGrid {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    column-gap: 20px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.pageItemGrid {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    column-gap: 20px;
+}
+
+.productData {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 30px;
+    align-items: flex-start;
+
+    .button:nth-child(1) {
+        border: 1px solid $blue;
+        color: $blue;
+        background-color: transparent;
+    }
+}
+
+.productButtons {
+    text-align: center;
+    align-items: flex-start;
+    grid-auto-flow: row;
+    width: 100%;
+    color: white;
+    display: grid;
+    row-gap: 10px;
+}
+
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    a {
+        font-size: 0.8em;
+        color: $grey;
+        display: block;
+    }
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: minmax(20em, 30em) minmax(auto, 300px);
+    column-gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#productButtons {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+    column-gap: 10px;
+}
+
+.dropzoneImage {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 150px;
+    height: 100%;
+    cursor: pointer;
+    padding: 20px;
+    border: 2px dashed rgba($blue, 0.4) !important;
+    background-color: $grey !important;
+    margin-top: 10px;
+}
+
+#uploadedImages {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(40px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        min-height: 100px;
+        object-fit: cover;
+    }
+}
+
+.formImages {
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+    align-items: flex-start;
+    grid-template-rows: 1fr auto;
+}
+
+.fileItem {
+    position: relative;
+
+    i {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        color: red;
+        box-shadow: $boxShadow;
+    }
+}
+
+.note-modal-footer input {
+    margin: inherit;
+}
+
+.note-modal-footer {
+    text-align: left !important;
+    padding: 10px 30px !important;
+    height: unset !important;
+}
+
+.note-btn {
+    float: unset !important;
+}
+
+form {
+    label {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .splitColumn {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+
+    .formData {
+        display: inline-grid;
+        row-gap: 5px;
+        justify-items: flex-start;
+    }
+
+    .buttonOutline {
+        border: 1px solid $blue;
+        background-color: transparent;
+        color: $blue;
+    }
+
+    textarea,
+    input[type='text'],
+    select,
+    input[type='password'] {
+        width: 100%;
+        border-radius: 0;
+        padding: 3px 5px;
+        border: 1px solid rgba($blue, 0.4);
+    }
+
+    input[type='file'] {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 3em;
+        font-weight: inherit;
+        font-family: inherit;
+    }
+
+
+
+    option {
+        padding: 3px 5px;
+
+    }
+
+    textarea {
+        resize: vertical;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .productGrid {
+        grid-template-columns: auto;
+    }
+
+    .productItemGrid {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+
+        img {
+            height: 50px;
+        }
+    }
+
+    .productData {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+
+    }
+
+    .navButtons {
+        text-align: left;
+    }
+
+    .formGrid {
+        row-gap: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .newProductGrid,
+    .newCategoryGrid {
+        padding: 0;
+    }
+
+    .confirmBackground {
+        padding: 0 30px;
+    }
+}

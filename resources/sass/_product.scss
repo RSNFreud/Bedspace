@@ -1,0 +1,149 @@
+@use 'variables'as *;
+
+
+.productGrid {
+    display: grid;
+    grid-template-columns: minmax(600px, 900px) 250px;
+    column-gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.productSidebar {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 20px;
+}
+
+.mainImage {
+    position: relative;
+    padding-bottom: 10px;
+
+}
+
+.productBox {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: $boxShadow;
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: 300px 1fr;
+
+    img {
+        width: 100%;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    .productList {
+        margin-top: 10px;
+        grid-auto-columns: minmax(100px, 150px);
+
+        .productImage {
+            height: 100px;
+        }
+    }
+}
+
+
+
+#additionalProducts {
+    font-size: 0.8em;
+
+    .productImage {
+        height: 75px;
+    }
+}
+
+.subImages {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 5px;
+    grid-auto-columns: 0.5fr;
+}
+
+#price {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.sidebarContainer {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: $boxShadow;
+
+    p {
+        display: block;
+        margin: 10px 0;
+    }
+
+    input[type='number'] {
+        border: none;
+        border-bottom: 1px solid rgba(8, 26, 51, 0.4);
+        margin-bottom: 10px;
+        outline: none;
+        width: 100%;
+        padding: 5px 0;
+        transition: 0.5s all;
+
+        &:focus {
+            border-bottom: 1px solid rgba(8, 26, 51, 1);
+
+        }
+    }
+
+    input[type='button'] {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .priceButtons {
+        margin-top: 15px;
+
+        input:nth-child(2) {
+            background-color: transparent;
+            border: 1px solid rgba(8, 26, 51, 1);
+            color: inherit;
+        }
+    }
+
+    label {
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .productGrid {
+        grid-template-columns: minmax(350px, 500px) minmax(250px, 300px);
+        row-gap: 20px;
+    }
+
+    .productBox {
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    .productGrid {
+        grid-template-columns: minmax(300px, 400px);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .productGrid {
+        grid-template-columns: 1fr;
+    }
+}

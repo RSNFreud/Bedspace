@@ -1,0 +1,153 @@
+@use 'variables'as *;
+
+.accountGrid {
+    display: grid;
+    grid-template-columns: minmax(375px, 500px) minmax(20em, 36em);
+    column-gap: 30px;
+    padding: 50px;
+
+    h3 {
+        margin-bottom: 15px;
+    }
+}
+
+
+.orderContainerGrid {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 20px;
+    align-items: flex-start;
+    max-height: 500px;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.orderContainer {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: $boxShadow;
+
+    .orderTop {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 20px;
+        padding-bottom: 10px;
+
+        p {
+            margin: 5px 0;
+        }
+    }
+
+    hr {
+        border-color: $grey;
+        margin-bottom: 20px;
+    }
+
+    img {
+        background-color: $grey;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .orderItem {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        column-gap: 20px;
+
+        span {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+    }
+
+    .orderItemGrid {
+        display: grid;
+        row-gap: 20px;
+        grid-auto-flow: row;
+    }
+}
+
+.orderItemTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    font-weight: bold;
+
+    span:last-child {
+        justify-self: flex-end;
+    }
+}
+
+.profileBox {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: $boxShadow;
+
+    h3 {
+        margin: 15px 0;
+    }
+
+    label {
+        display: block;
+        margin: 5px 0;
+    }
+
+    input[type='text'],
+    input[type='password'] {
+        width: 100%;
+        border-radius: 0;
+        padding: 3px 5px;
+        border: 1px solid rgba($blue, 0.4);
+    }
+
+    input[type='button'],
+    input[type='submit'] {
+        padding: 7px 40px;
+    }
+
+    .splitColumn {
+        column-gap: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .accountGrid {
+        grid-template-columns: minmax(20em, 36em);
+        padding: 50px;
+        row-gap: 30px;
+    }
+
+    .recentOrders {
+        order: 1;
+    }
+
+    .orderContainerGrid {
+        max-height: unset;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .accountGrid {
+        padding: 20px;
+    }
+
+    .orderItemTop {
+        grid-template-columns: 1fr;
+
+        span:last-child {
+            font-size: 0.8em;
+            justify-self: flex-start;
+        }
+    }
+}

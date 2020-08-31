@@ -1,0 +1,72 @@
+.modalDropdown input[type="text"],
+.modalDropdown input[type="password"] {
+    width: 100%;
+    margin-top: 5px;
+    border: 1px solid rgba(8, 26, 51, 0.4);
+    padding: 3px;
+    outline: none;
+}
+
+
+#signIn label {
+    display: block;
+    margin-top: 5px;
+}
+
+input[type="button"],
+input[type="submit"] {
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #081A33;
+    color: white;
+    padding: 7px 20px;
+    cursor: pointer;
+    transition: 0.5s all;
+
+    &:hover {
+        background-color: #0f4083;
+
+    }
+
+    &:disabled {
+        background-color: grey;
+        pointer-events: none;
+    }
+}
+
+label {
+    font-size: 0.8em;
+}
+
+#email {
+    margin-bottom: 5px;
+}
+
+#forgotPassword {
+    margin-top: 5px;
+    font-size: 0.7em;
+    text-align: right;
+    width: 100%;
+}
+
+.buttonRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.formError {
+    color: #8a1010;
+    padding: 5px 0;
+    font-size: 0.8em;
+}
+
+.errorBox {
+    background-color: #8a1010;
+    border: 1px solid #350505;
+    color: white;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 0.8em;
+}
